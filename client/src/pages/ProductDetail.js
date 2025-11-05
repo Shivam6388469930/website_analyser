@@ -11,10 +11,22 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    fetchProduct();
-  }, [id]);
+  // useEffect(() => {
+  //   fetchProduct();
+  // }, [id]);
 
+  // const fetchProduct = async () => {
+  //   try {
+  //     const { data } = await axios.get(`/api/products/${id}`);
+  //     setProduct(data);
+  //     setLoading(false);
+  //   } catch (err) {
+  //     setError('Failed to fetch product details');
+  //     setLoading(false);
+  //   }
+  // };
+
+  useEffect(() => {
   const fetchProduct = async () => {
     try {
       const { data } = await axios.get(`/api/products/${id}`);
@@ -25,6 +37,10 @@ const ProductDetail = () => {
       setLoading(false);
     }
   };
+
+  fetchProduct();
+}, [id]); // ✅ Warning gone
+
 
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this product?')) {

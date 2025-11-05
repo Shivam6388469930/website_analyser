@@ -11,12 +11,27 @@ const AnalysisDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (user) {
-      fetchAnalysis();
-    }
-  }, [id, user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     fetchAnalysis();
+  //   }
+  // }, [id, user]);
 
+  // const fetchAnalysis = async () => {
+  //   try {
+  //     const { data } = await axios.get(`/api/websites/${id}`, {
+  //       headers: { Authorization: `Bearer ${user.token}` }
+  //     });
+  //     setAnalysis(data);
+  //     setLoading(false);
+  //   } catch (err) {
+  //     setError('Failed to fetch analysis details');
+  //     setLoading(false);
+  //   }
+  // };
+
+
+  useEffect(() => {
   const fetchAnalysis = async () => {
     try {
       const { data } = await axios.get(`/api/websites/${id}`, {
@@ -29,6 +44,11 @@ const AnalysisDetail = () => {
       setLoading(false);
     }
   };
+
+  if (user) {
+    fetchAnalysis();
+  }
+}, [id, user]); // ✅ Warning removed
 
   const formatDate = (dateStr) => {
     return dateStr ? new Date(dateStr).toLocaleDateString('en-US', {

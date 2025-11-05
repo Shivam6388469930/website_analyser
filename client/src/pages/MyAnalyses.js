@@ -10,17 +10,10 @@ const MyAnalyses = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (user) {
-      fetchAnalyses();
-    }
-  }, [user]);
-
   const fetchAnalyses = async () => {
     try {
       const { data } = await axios.get('/api/websites', {
-        headers: {
-          Authorization: `Bearer ${user.token}`
-        }
+        headers: { Authorization: `Bearer ${user.token}` }
       });
       setAnalyses(data);
       setLoading(false);
@@ -29,6 +22,12 @@ const MyAnalyses = () => {
       setLoading(false);
     }
   };
+
+  if (user) {
+    fetchAnalyses();
+  }
+}, [user]);
+
 
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this analysis?')) {
