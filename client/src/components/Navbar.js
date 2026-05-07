@@ -13,7 +13,7 @@ const Navbar = () => {
         {user ? (
           <>
             <li><Link to="/my-analyses">My Analyses</Link></li>
-            <li><Link to="/products">Products</Link></li>
+            {/* <li><Link to="/products">Products</Link></li> */}
             <li>
               <span style={{ color: '#4CAF50' }}>Welcome, {user.name}</span>
             </li>
