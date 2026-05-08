@@ -227,7 +227,7 @@ const Register = () => {
         password: formData.password
       });
       login(data);
-      navigate('/products');
+      navigate('/');
     } catch (err) {
       const errorMessage = err.response?.data?.message || 'Registration failed. Please try again.';
       setErrors(prev => ({
