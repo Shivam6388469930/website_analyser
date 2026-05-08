@@ -113,7 +113,7 @@ const Login = () => {
     try {
       const { data } = await axios.post('https://website-analyser-1.onrender.com/api/users/login', formData);
       login(data);
-      navigate('/products');
+      navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please check your credentials.');
     } finally {
