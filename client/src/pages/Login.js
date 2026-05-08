@@ -111,7 +111,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const { data } = await axios.post('/api/users/login', formData);
+      const { data } = await axios.post('https://website-analyser-z5b3.onrender.com/api/users/login', formData);
       login(data);
       navigate('/products');
     } catch (err) {

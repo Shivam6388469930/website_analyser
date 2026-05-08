@@ -353,7 +353,7 @@ const AnalyzeWebsite = () => {
 
     try {
       const { data } = await axios.post(
-        '/api/websites/analyze',
+        'https://website-analyser-z5b3.onrender.com/api/websites/analyze',
         { url: formattedUrl },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

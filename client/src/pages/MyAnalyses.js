@@ -12,7 +12,7 @@ const MyAnalyses = () => {
   useEffect(() => {
   const fetchAnalyses = async () => {
     try {
-      const { data } = await axios.get('/api/websites', {
+      const { data } = await axios.get('https://website-analyser-z5b3.onrender.com/api/websites', {
         headers: { Authorization: `Bearer ${user.token}` }
       });
       setAnalyses(data);
@@ -32,7 +32,7 @@ const MyAnalyses = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this analysis?')) {
       try {
-        await axios.delete(`/api/websites/${id}`, {
+        await axios.delete(`https://website-analyser-z5b3.onrender.com/api/websites/${id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`
           }

@@ -221,7 +221,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const { data } = await axios.post('/api/users/register', {
+      const { data } = await axios.post('https://website-analyser-z5b3.onrender.com/api/users/register', {
         name: formData.name.trim(),
         email: formData.email.toLowerCase(),
         password: formData.password
