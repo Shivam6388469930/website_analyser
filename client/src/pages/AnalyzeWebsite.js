@@ -250,11 +250,11 @@ import {
   Grow,
   Card,
   CardContent,
-  IconButton,
+
   Chip,
   Divider,
-  useTheme,
-  alpha
+
+
 } from '@mui/material';
 import {
   Analytics as AnalyticsIcon,
@@ -262,7 +262,7 @@ import {
   Refresh as RefreshIcon,
   AdminPanelSettings as AdminIcon,
   FileDownload as ExportIcon,
-  CheckCircle as CheckIcon,
+
   Error as ErrorIcon
 } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -299,7 +299,7 @@ const GradientText = styled(Typography)`
 const AnalyzeWebsite = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const theme = useTheme();
+
 
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
@@ -309,7 +309,7 @@ const AnalyzeWebsite = () => {
 
   const validateUrl = (input) => {
     if (!input.trim()) return 'URL is required';
-    const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+    const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
     if (!urlPattern.test(input.trim())) {
       return 'Please enter a valid URL';
     }
