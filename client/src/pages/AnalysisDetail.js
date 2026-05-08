@@ -393,7 +393,7 @@ const AnalysisDetail = () => {
   useEffect(() => {
     const fetchAnalysis = async () => {
       try {
-        const { data } = await axios.get(`https://website-analyser-z5b3.onrender.com/api/websites/${id}`, {
+        const { data } = await axios.get(`https://website-analyser-1.onrender.com/api/websites/${id}`, {
           headers: { Authorization: `Bearer ${user.token}` }
         });
         setAnalysis(data);
